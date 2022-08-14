@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --Cyan-light: hsl(179, 40%, 44%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+
+  /* ### Neutral */
+
+  --white: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+}
+body {
+  font-family: "Karla", sans-serif;
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  background: hsl(182, 47%, 88%);
+}
+.grid {
+  width: 60vw;
+  max-width: 650px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.grid__item {
+  padding: 1rem;
+}
+.title {
+  margin-bottom: 0.8rem;
+}
+.body {
+  line-height: 1.3;
+  font-size: 15px;
+}
+
+/* grid__item one */
+.grid__item-one {
+  background: var(--white);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.grid__item-one .title {
+  color: var(--Cyan);
+}
+.grid__item-one .sub-title {
+  color: var(--Bright-Yellow);
+  margin-bottom: 1rem;
+}
+.grid__item-one .body {
+  color: var(--Grayish-Blue);
+  max-width: 550px;
+}
+
+/* grid__item two */
+.grid__item-two {
+  background: var(--Cyan);
+  color: var(--white);
+}
+.price {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+  /* font-weight: 700; */
+}
+.duration {
+  font-size: 1rem;
+  color: var(--Cyan-light);
+}
+
+.grid__item-two .cta {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--Bright-Yellow);
+  text-align: center;
+  font-size: 15px;
+  padding: 0.6rem;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+}
+.grid__item-two .cta:hover {
+  opacity: 0.9;
+}
+
+.grid__item-three {
+  background: var(--Cyan-light);
+  color: var(--white);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@media screen and (min-width: 780px) {
+  .body {
+    line-height: 1.1;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: repeat(2 1fr); */
+  }
+  .grid__item {
+    padding: 2rem;
+  }
+  .grid__item-one {
+    grid-column: span 2;
+  }
+  .grid__item-two {
+    border-bottom-left-radius: 5px;
+  }
+  .grid__item-three {
+    border-bottom-left-radius: 0;
+  }
+}
